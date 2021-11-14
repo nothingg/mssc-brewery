@@ -6,25 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BeerDto {
-
-    @Null
+public class CustomerDto {
     private UUID id;
 
     @NotBlank
-    private String beerName;
-
-    @NotBlank
-    private String beerStyle;
-
-    @Positive
-    private Long upc;
+    @Size(min = 3 , max = 100)
+    private String name;
 }
